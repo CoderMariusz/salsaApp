@@ -3,21 +3,23 @@ import React from 'react';
 import Category from './Category';
 
 const Categories = () => {
+  const categories = ['salsa', 'bachata', 'rumba', 'cha-cha', 'salsa', 'salsa'];
+
+  const renderCategories = () => {
+    return categories.map((name) => {
+      return <Category name={name} />;
+    });
+  };
+
   return (
     <ScrollView
-      horizontal
-      showsHorizontalScrollIndicator={false}
       contentContainerStyle={{
-        paddingLeft: 10,
-        paddingRight: 10,
+        paddingHorizontal: 10,
         paddingTop: 10
-      }}>
-      <Category name='salsa' />
-      <Category name='bachata' />
-      <Category name='rumba' />
-      <Category name='cha-cha' />
-      <Category name='salsa' />
-      <Category name='salsa' />
+      }}
+      horizontal
+      showsHorizontalScrollIndicator={false}>
+      {renderCategories()}
     </ScrollView>
   );
 };
