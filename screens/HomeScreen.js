@@ -15,6 +15,7 @@ import {
   AdjustmentsHorizontalIcon
 } from 'react-native-heroicons/outline';
 import Categories from '../components/Categories';
+import FeatureRow from '../components/FeatureRow';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -27,6 +28,32 @@ const HomeScreen = () => {
       headerShown: false
     });
   }, [navigation]);
+
+  const offers = [
+    {
+      id: 1,
+      name: 'Salsa',
+      description:
+        'Salsa is a popular dance style that originated in Cuba in the 1950s. It is danced to salsa music, which is a fusion of Cuban son, guaracha, cha cha chá, mambo, and other styles. Salsa is danced to fast, upbeat music and is danced primarily in a social setting. Salsa is danced in a variety of styles, including Cuban-style salsa, New York-style salsa, and LA-style salsa.',
+      teachers: 'Mariusz Krauze',
+      rating: 4.5,
+      address: 'Warsaw, Poland',
+      urlImg:
+        'https://res.cloudinary.com/mariuszkra85/image/upload/v1666652542/Salsa/45751f_30692c4973a7487da76e811525930e1a_mv2_mvp4c1.jpg'
+    },
+    {
+      id: 2,
+      name: 'Bachata',
+      description:
+        'Salsa is a popular dance style that originated in Cuba in the 1950s. It is danced to salsa music, which is a fusion of Cuban son, guaracha, cha cha chá, mambo, and other styles. Salsa is danced to fast, upbeat music and is danced primarily in a social setting. Salsa is danced in a variety of styles, including Cuban-style salsa, New York-style salsa, and LA-style salsa.',
+      teachers: 'Mariusz Wazer',
+      rating: 4,
+      address: 'Warsaw, Poland',
+      urlImg:
+        'https://res.cloudinary.com/mariuszkra85/image/upload/v1666652542/Salsa/45751f_30692c4973a7487da76e811525930e1a_mv2_mvp4c1.jpg'
+    }
+  ];
+
   return (
     <SafeAreaView className='pt-10'>
       <View className='flex flex-row gap-2 px-3'>
@@ -77,6 +104,21 @@ const HomeScreen = () => {
         {/* Categories */}
         <Categories />
         {/* Offers */}
+        <FeatureRow
+          title='2for1'
+          description='you have 2 lesson for one'
+          featureCategory={offers}
+        />
+        {/* <FeatureRow
+          title='2for1'
+          description='you have 2 lesson for one'
+          featureCategory='discount'
+        />
+        <FeatureRow
+          title='2for1'
+          description='you have 2 lesson for one'
+          featureCategory='featured'
+        /> */}
       </ScrollView>
     </SafeAreaView>
   );

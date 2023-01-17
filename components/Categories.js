@@ -5,12 +5,6 @@ import Category from './Category';
 const Categories = () => {
   const categories = ['salsa', 'bachata', 'rumba', 'cha-cha', 'salsa', 'salsa'];
 
-  const renderCategories = () => {
-    return categories.map((name) => {
-      return <Category name={name} />;
-    });
-  };
-
   return (
     <ScrollView
       contentContainerStyle={{
@@ -19,7 +13,12 @@ const Categories = () => {
       }}
       horizontal
       showsHorizontalScrollIndicator={false}>
-      {renderCategories()}
+      {categories.map((name, i) => (
+        <Category
+          key={i}
+          name={name}
+        />
+      ))}
     </ScrollView>
   );
 };
