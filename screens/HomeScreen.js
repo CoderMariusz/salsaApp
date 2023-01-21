@@ -53,6 +53,40 @@ const HomeScreen = () => {
         'https://res.cloudinary.com/mariuszkra85/image/upload/v1666652542/Salsa/45751f_30692c4973a7487da76e811525930e1a_mv2_mvp4c1.jpg'
     }
   ];
+  const discount = [
+    {
+      id: 1,
+      name: 'Salsa',
+      description: 'you will have discount for 2 lessons, 50% off,',
+      teachers: 'Mariusz Krauze',
+      urlImg:
+        'https://res.cloudinary.com/mariuszkra85/image/upload/v1666652542/Salsa/45751f_30692c4973a7487da76e811525930e1a_mv2_mvp4c1.jpg'
+    },
+    {
+      id: 2,
+      name: 'Bachata',
+      description: 'you will have discount for 2 lessons, 50% off,',
+      teachers: 'Mariusz Wazer',
+      urlImg:
+        'https://res.cloudinary.com/mariuszkra85/image/upload/v1666652542/Salsa/45751f_30692c4973a7487da76e811525930e1a_mv2_mvp4c1.jpg'
+    },
+    {
+      id: 3,
+      name: 'Bachata',
+      description: 'you will have discount for 2 lessons, 50% off,',
+      teachers: 'Mariusz Wazer',
+      urlImg:
+        'https://res.cloudinary.com/mariuszkra85/image/upload/v1666652542/Salsa/45751f_30692c4973a7487da76e811525930e1a_mv2_mvp4c1.jpg'
+    },
+    {
+      id: 4,
+      name: 'Bachata',
+      description: 'you will have discount for 2 lessons, 50% off,',
+      teachers: 'Mariusz Wazer',
+      urlImg:
+        'https://res.cloudinary.com/mariuszkra85/image/upload/v1666652542/Salsa/45751f_30692c4973a7487da76e811525930e1a_mv2_mvp4c1.jpg'
+    }
+  ];
 
   return (
     <SafeAreaView className='pt-10'>
@@ -105,20 +139,15 @@ const HomeScreen = () => {
         <Categories />
         {/* Offers */}
         <FeatureRow
-          title='2for1'
-          description='you have 2 lesson for one'
+          title='check our offers!'
+          description='amazing offers for you! in our studio, with our teachers, in diferent styles'
           featureCategory={offers}
         />
-        {/* <FeatureRow
-          title='2for1'
-          description='you have 2 lesson for one'
-          featureCategory='discount'
-        />
         <FeatureRow
-          title='2for1'
-          description='you have 2 lesson for one'
-          featureCategory='featured'
-        /> */}
+          title='Our discount for you!'
+          description='discount for 2 lessons, 50% off,'
+          featureCategory={discount}
+        />
       </ScrollView>
     </SafeAreaView>
   );
