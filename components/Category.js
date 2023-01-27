@@ -2,7 +2,7 @@ import { View, Text, Image, TouchableOpacity, Linking } from 'react-native';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 
-const Category = ({ name, imgUrl, description }) => {
+const Category = ({ name, imgUrl, description, teachers }) => {
   const navigation = useNavigation();
 
   return (
@@ -12,7 +12,8 @@ const Category = ({ name, imgUrl, description }) => {
         navigation.navigate('Style', {
           name,
           imgUrl,
-          description
+          description,
+          teachers
         })
       }>
       <Image

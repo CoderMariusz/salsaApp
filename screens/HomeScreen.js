@@ -39,7 +39,11 @@ const HomeScreen = () => {
       .fetch(
         `*[_type == "style"]{
       ...,
-      "image":image.asset->url
+      "image":image.asset->url,
+      teachers[]->{
+        name,
+        "image":image.asset-> url 
+      }
     }`
       )
       .then((data) => {
@@ -82,7 +86,9 @@ const HomeScreen = () => {
       },
       secondStyle->{
         name
-      }
+      },
+
+      
     }`
       )
       .then((data) => {

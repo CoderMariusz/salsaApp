@@ -7,6 +7,7 @@ const TeacherScreen = () => {
   const route = useRoute();
   const { id, name, urlImg, bio, firstStyle, secondStyle, images } =
     route.params;
+  console.log(route.params);
   return (
     <View>
       <Image

@@ -12,13 +12,14 @@ const Categories = ({ styles }) => {
       horizontal
       showsHorizontalScrollIndicator={false}>
       {styles.map((style, i) => {
-        const { name, image, description, _id } = style;
+        const { name, image, description, _id, teachers } = style;
         return (
           <Category
             key={i}
             name={name}
             imgUrl={image}
             description={description}
+            teachers={teachers}
           />
         );
       })}
