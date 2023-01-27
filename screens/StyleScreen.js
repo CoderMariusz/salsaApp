@@ -1,4 +1,4 @@
-import { View, Text, Image, Pressable } from 'react-native';
+import { View, Text, Image, Pressable, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { useRoute } from '@react-navigation/native';
 import { ArrowDownRightIcon } from 'react-native-heroicons/outline';
@@ -19,9 +19,14 @@ const StyleScreen = () => {
           {name}
         </Text>
         <Text className='text-lg text-slate-700 mt-3'>{description}</Text>
-        <Pressable className='p-2 mt-2 bg-red-700 flex justify-center items-center w-36 rounded-lg text-slate-200'>
-          <Text className='text-slate-200'>Our Teacher</Text>
-        </Pressable>
+        <TouchableOpacity className='flex flex-row gap-02 mt-3 p-2 bg-red-700 rounded-lg w-48'>
+          <Text className='text-lg text-slate-300'>Our Teacher</Text>
+          <ArrowDownRightIcon
+            width={20}
+            height={20}
+            color='#d2d2d2'
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );
