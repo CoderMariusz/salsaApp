@@ -2,9 +2,7 @@ import { View, Text, ScrollView } from 'react-native';
 import React from 'react';
 import Category from './Category';
 
-const Categories = () => {
-  const categories = ['salsa', 'bachata', 'rumba', 'cha-cha', 'salsa', 'salsa'];
-
+const Categories = ({ styles }) => {
   return (
     <ScrollView
       contentContainerStyle={{
@@ -13,12 +11,17 @@ const Categories = () => {
       }}
       horizontal
       showsHorizontalScrollIndicator={false}>
-      {categories.map((name, i) => (
-        <Category
-          key={i}
-          name={name}
-        />
-      ))}
+      {styles.map((style, i) => {
+        const { name, image, description, _id } = style;
+        return (
+          <Category
+            key={i}
+            name={name}
+            imgUrl={image}
+            description={description}
+          />
+        );
+      })}
     </ScrollView>
   );
 };

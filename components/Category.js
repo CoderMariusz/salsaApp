@@ -1,12 +1,23 @@
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Linking } from 'react-native';
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 
-const Category = ({ name, imgUrl }) => {
+const Category = ({ name, imgUrl, description }) => {
+  const navigation = useNavigation();
+
   return (
-    <TouchableOpacity className='mr-2 relative'>
+    <TouchableOpacity
+      className='mr-2 relative'
+      onPress={() =>
+        navigation.navigate('Style', {
+          name,
+          imgUrl,
+          description
+        })
+      }>
       <Image
         source={{
-          uri: 'https://res.cloudinary.com/mariuszkra85/image/upload/v1662935098/Salsa/background_cnwkfh.gif'
+          uri: imgUrl
         }}
         className='w-20 h-20 p-2 '
       />
