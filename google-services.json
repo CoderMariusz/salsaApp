@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "252641954747",
+    "project_id": "salsaappmobile",
+    "storage_bucket": "salsaappmobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:252641954747:android:b92195d219d938c7dc529e",
+        "android_client_info": {
+          "package_name": "SalsaApp.Sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "252641954747-5ja8m98h7803eg8m82m7ji7pjiks6ldo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDS3ShiJ5wL-X8_K1uOL1HzQzb2h6mj7x0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "252641954747-5ja8m98h7803eg8m82m7ji7pjiks6ldo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

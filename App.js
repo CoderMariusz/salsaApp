@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TeacherScreen from './screens/TeacherScreen';
 import StyleScreen from './screens/StyleScreen';
 import OfferScreen from './screens/OfferScreen';
+import ShopScreen from './screens/ShopScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,10 @@ export default function App() {
           <Stack.Screen
             name='Offer'
             component={OfferScreen}
+          />
+          <Stack.Screen
+            name='Shop'
+            component={ShopScreen}
           />
         </Stack.Navigator>
       </TailwindProvider>

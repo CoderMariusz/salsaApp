@@ -17,6 +17,7 @@ import {
 import Categories from '../components/Categories';
 import FeatureRow from '../components/FeatureRow';
 import sanityClient from '../sanity';
+import ShopRow from '../components/ShopRow';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -146,6 +147,7 @@ const HomeScreen = () => {
         {/* Categories */}
         <Categories styles={styles} />
         {/* Rows */}
+        <ShopRow />
         <FeatureRow
           title='check our offers!'
           description='amazing offers for you! in our studio, with our teachers, in diferent styles'
