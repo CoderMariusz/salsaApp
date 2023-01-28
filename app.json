@@ -2,7 +2,7 @@
   "expo": {
     "name": "salsaApp",
     "slug": "salsaApp",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -14,9 +14,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.mariuszkra85.salsaApp"
@@ -26,7 +24,8 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.mariuszkra85.salsaApp"
+      "package": "com.mariuszkra85.salsaApp",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
