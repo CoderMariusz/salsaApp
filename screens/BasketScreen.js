@@ -1,12 +1,17 @@
 import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native';
 import React, { useMemo, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { selectBasket, selectBasketTotal } from '../features/basketSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  removeToBasket,
+  selectBasket,
+  selectBasketTotal
+} from '../features/basketSlice';
 
 const BasketScreen = () => {
   const items = useSelector(selectBasket);
   const total = useSelector(selectBasketTotal);
   const [groupedItems, setGroupedItems] = useState([]);
+  const dispatch = useDispatch();
 
   useMemo(() => {
     const groupedItems = items.reduce((results, item) => {
@@ -15,8 +20,6 @@ const BasketScreen = () => {
     }, {});
     setGroupedItems(groupedItems);
   }, [items]);
-
-  console.log(groupedItems);
 
   if (groupedItems.length === 0) {
     return null;
@@ -39,7 +42,14 @@ const BasketScreen = () => {
                 />
                 <Text>{items[0].name}</Text>
               </View>
-              <Text>£{items[0].price * items.length}</Text>
+              <View className='flex flex-row gap-3 justify-center items-center'>
+                <Text>£{items[0].price * items.length}</Text>
+                <TouchableOpacity
+                  className='p-2'
+                  onPress={() => dispatch(removeToBasket({ id: key }))}>
+                  <Text className='text-red-500'>Remove</Text>
+                </TouchableOpacity>
+              </View>
             </View>
           ))}
         </ScrollView>
