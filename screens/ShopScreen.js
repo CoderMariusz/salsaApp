@@ -1,6 +1,8 @@
 import { View, Text, Image, ScrollView } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import sanityClient from '../sanity';
+import ShopItem from '../components/ShopItem';
+import BasketIcon from '../components/BasketIcon';
 const ShopScreen = () => {
   const [shop, setShop] = useState([]);
   const [items, setItems] = useState([]);
@@ -27,33 +29,34 @@ const ShopScreen = () => {
         setShop(data);
       });
   }, []);
-
-  console.log(shop[0]?.image);
-
   return (
-    <ScrollView>
-      <Image
-        source={{ uri: shop[0]?.image }}
-        className='w-full h-48 object-cover'
-      />
-      <Text>{shop[0]?.headline}</Text>
-      <Text>{shop[0]?.description}</Text>
-      <View className='flex flex-wrap'>
-        {items.map((item) => {
-          console.log('item', item);
-          return (
-            <View className='w-1/2'>
-              <Image
-                source={{ uri: item.image }}
-                className='w-full h-48 object-cover'
+    <>
+      <ScrollView>
+        <Image
+          source={{ uri: shop[0]?.image }}
+          className='w-full h-48 object-cover'
+        />
+        <Text className='text-2xl first-letter:uppercase'>
+          {shop[0]?.headline}
+        </Text>
+        <Text className='text-xl'>{shop[0]?.description}</Text>
+        <View className='flex flex-wrap pb-28'>
+          {items.map((item) => {
+            return (
+              <ShopItem
+                key={item._id}
+                id={item._id}
+                name={item.name}
+                price={item.price}
+                image={item.image}
+                description={item.description}
               />
-              <Text>{item.name}</Text>
-              <Text>{item.price}</Text>
-            </View>
-          );
-        })}
-      </View>
-    </ScrollView>
+            );
+          })}
+        </View>
+      </ScrollView>
+      <BasketIcon />
+    </>
   );
 };
 

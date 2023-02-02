@@ -4,7 +4,6 @@ import { useNavigation } from '@react-navigation/native';
 import { ArrowLeftIcon, ArrowRightIcon } from 'react-native-heroicons/outline';
 
 const ShopRow = () => {
-  const [shop, setShop] = React.useState([]);
   const navigation = useNavigation();
 
   return (
@@ -15,7 +14,7 @@ const ShopRow = () => {
         <Text className='font-bold text-3xl first-letter:capitalize mt-3'>
           Shop
         </Text>
-        <Text>
+        <Text className='text-zinc-600/90 pb-2'>
           This is our shop where you can buy alle our amazing stuff...
         </Text>
         <Image
@@ -26,7 +25,7 @@ const ShopRow = () => {
         />
       </View>
       <TouchableOpacity
-        className='pt-3 flex items-center justify-center'
+        className='pt-12 flex items-center justify-center'
         onPress={() => {
           navigation.navigate('Shop');
         }}>

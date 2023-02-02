@@ -9,7 +9,7 @@ const Card = ({ id, urlImg, name, rating, address, teachers }) => {
   return (
     <TouchableOpacity
       className='mr-2'
-      onPressIn={() => {
+      onPress={() => {
         navigation.navigate('Offer', {
           id,
           name,
