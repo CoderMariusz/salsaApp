@@ -67,6 +67,7 @@ const Header = () => {
               <TouchableOpacity
                 onPress={() => {
                   navigation.navigate('Home');
+                  setIfOpen(!ifOpen);
                 }}>
                 <Text className='text-lg font-bold text-slate-500'>Home</Text>
               </TouchableOpacity>
@@ -74,6 +75,7 @@ const Header = () => {
               <TouchableOpacity
                 onPress={() => {
                   navigation.navigate('Teacher');
+                  setIfOpen(!ifOpen);
                 }}>
                 <Text className='text-lg font-bold text-slate-500'>
                   Teacher
@@ -82,6 +84,7 @@ const Header = () => {
               <TouchableOpacity
                 onPress={() => {
                   navigation.navigate('Classes');
+                  setIfOpen(!ifOpen);
                 }}>
                 <Text className='text-lg font-bold text-slate-500'>
                   Classes
@@ -90,6 +93,7 @@ const Header = () => {
               <TouchableOpacity
                 onPress={() => {
                   navigation.navigate('Events');
+                  setIfOpen(!ifOpen);
                 }}>
                 <Text className='text-lg font-bold text-slate-500'>Events</Text>
               </TouchableOpacity>
