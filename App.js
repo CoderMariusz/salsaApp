@@ -1,5 +1,5 @@
 import { TailwindProvider } from 'tailwindcss-react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import HomeScreen from './screens/HomeScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import store from './store';
@@ -9,11 +9,15 @@ import StyleScreen from './screens/StyleScreen';
 import OfferScreen from './screens/OfferScreen';
 import ShopScreen from './screens/ShopScreen';
 import BasketScreen from './screens/BasketScreen';
+import PaymentScreen from './screens/PaymentScreen';
+import UserScreen from './screens/UserScreen';
+import EventsScreen from './screens/EventsScreen';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   const isAndroid = Platform.OS === 'android';
+
   return (
     <NavigationContainer>
       <Provider store={store}>
@@ -45,6 +49,18 @@ export default function App() {
               options={{
                 presentation: isAndroid ? 'modal' : 'push'
               }}
+            />
+            <Stack.Screen
+              name='Payment'
+              component={PaymentScreen}
+            />
+            <Stack.Screen
+              name='User'
+              component={UserScreen}
+            />
+            <Stack.Screen
+              name='Events'
+              component={EventsScreen}
             />
           </Stack.Navigator>
         </TailwindProvider>

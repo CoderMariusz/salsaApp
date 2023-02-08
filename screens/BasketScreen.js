@@ -6,12 +6,14 @@ import {
   selectBasket,
   selectBasketTotal
 } from '../features/basketSlice';
+import { useNavigation } from '@react-navigation/native';
 
 const BasketScreen = () => {
   const items = useSelector(selectBasket);
   const total = useSelector(selectBasketTotal);
   const [groupedItems, setGroupedItems] = useState([]);
   const dispatch = useDispatch();
+  const navigation = useNavigation();
 
   useMemo(() => {
     const groupedItems = items.reduce((results, item) => {
@@ -68,7 +70,9 @@ const BasketScreen = () => {
 
           <Text className='text-lg font-bold'>£{total.toFixed(2)}</Text>
         </View>
-        <TouchableOpacity className='p-3 bg-blue-500/80 rounded-lg mt-2 mr-2 w-[80%] flex justify-center items-center'>
+        <TouchableOpacity
+          className='p-3 bg-blue-500/80 rounded-lg mt-2 mr-2 w-[80%] flex justify-center items-center'
+          onPress={() => navigation.navigate('Payment')}>
           <Text className='text-lg font-bold'>Checkout</Text>
         </TouchableOpacity>
       </View>
